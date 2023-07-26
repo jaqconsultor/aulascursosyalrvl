@@ -13,6 +13,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -23,7 +24,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img src="logo.png" alt="" height="50px" weight="50px">
-                    {{ config('app.name', 'GinecoReport') }}
+                    {{ config('app.name', 'AUU') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -40,36 +41,6 @@
                         <!-- Authentication Links -->
                         @guest
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos Grupales</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <a class="dropdown-item" href="{{ url('/') }}">Para Una Instituación </a>
-                            <a class="dropdown-item" href="{{ url('/') }}">Para un Profesor y sus Alumnos</a>
-                            <a class="dropdown-item" href="">Planes & Tarifas Grupales</a>
-                        </div>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Productos Individuales</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="{{ url('/') }}">Para que Profesos enseñe sus Cursos</a>
-                                <a class="dropdown-item" href="{{ url('/') }}">Para que el Alumno Estudie & Aprenda</a>
-                                <a class="dropdown-item" href="">Planes & Tarifas Individuales</a>
-                            </div>
-                        </li>
-            
-                        <li class="nav-item">
-                            <a class="nav-link" href="">Acerca de Nosotros</a>
-                        </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="">Galerias</a>
-                            </li>
-
-                            <li class="nav-item  ">
-                                <a class="nav-link active" href="">Contactanos</a>
-                            </li>
-
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -83,11 +54,19 @@
                             @endif
 
                         @else
-    
-                            <li class="nav-item dropdown">
+
+                        <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="{{ url('/') }}">Tipo de Actividades</a>
+                                <a class="dropdown-item" href="{{ route('products.index') }}">Productos</a>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="{{ route('tipoactividad.index') }}">Tipo de Actividades</a>
                                 <a class="dropdown-item" href="{{ url('/') }}">Formatos de Archivos</a>
                                 <a class="dropdown-item" href="{{ url('/') }}">Temas</a>
                                 <a class="dropdown-item" href="{{ url('/') }}">Planes y Tarifas</a>
@@ -129,5 +108,7 @@
             @yield('content')
         </main>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
 </body>
 </html>
