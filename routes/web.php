@@ -1,9 +1,14 @@
 <?php
 
+use App\Models\FormatoArchivo;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TipoActividadController;
+use App\Http\Controllers\FormatoArchivoController;
+use App\Http\Controllers\TemasController;
+use App\Http\Controllers\PlanesController;
+use App\Http\Controllers\RolesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +40,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('products', ProductController::class);
 Route::resource('tipoactividad', TipoActividadController::class);
+Route::resource('formatoarchivo', FormatoArchivoController::class);
+Route::resource('temas', TemasController::class);
+Route::resource('planes', PlanesController::class);
+Route::resource('roles', RolesController::class);
+

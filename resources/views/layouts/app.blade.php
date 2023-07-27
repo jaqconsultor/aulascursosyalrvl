@@ -58,19 +58,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
-                                <a class="dropdown-item" href="{{ route('products.index') }}">Productos</a>
-                            </div>
-                        </li>
-
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Configuracion</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownId">
                                 <a class="dropdown-item" href="{{ route('tipoactividad.index') }}">Tipo de Actividades</a>
-                                <a class="dropdown-item" href="{{ url('/') }}">Formatos de Archivos</a>
-                                <a class="dropdown-item" href="{{ url('/') }}">Temas</a>
-                                <a class="dropdown-item" href="{{ url('/') }}">Planes y Tarifas</a>
-                                <a class="dropdown-item" href="{{ url('/') }}">Roles de Usuario</a>
+                                <a class="dropdown-item" href="{{ route('formatoarchivo.index') }}">Formatos de Archivos</a>
+                                <a class="dropdown-item" href="{{ route('temas.index') }}">Temas</a>
+                                <a class="dropdown-item" href="{{ route('planes.index') }}">Planes y Tarifas</a>
+                                <a class="dropdown-item" href="{{ route('roles.index') }}">Roles de Usuario</a>
                             </div>
                         </li>
 
