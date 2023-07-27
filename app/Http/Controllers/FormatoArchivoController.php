@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\formatoarchivo;
+use App\Models\FormatoArchivo;
 use Illuminate\Http\Request;
 
 class FormatoArchivoController extends Controller
