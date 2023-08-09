@@ -20,6 +20,9 @@ php artisan migrate
 ### Borras las Tablas y la Recrea
 php artisan migrate:fresh
 
+### Cargar los Registros
+php artisan db:seed
+
 ### Roallback
 php artisan migrate:reset
 
