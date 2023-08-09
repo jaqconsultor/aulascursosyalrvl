@@ -10,6 +10,7 @@ use App\Http\Controllers\TemasController;
 use App\Http\Controllers\PlanesController;
 use App\Http\Controllers\RolesController;
 use App\Http\Controllers\CursosController;
+use App\Http\Controllers\ActividadesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,4 @@ Route::resource('temas', TemasController::class);
 Route::resource('planes', PlanesController::class);
 Route::resource('roles', RolesController::class);
 Route::resource('cursos', CursosController::class);
+Route::resource('actividades', ActividadesController::class);

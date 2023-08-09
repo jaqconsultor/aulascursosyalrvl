@@ -70,7 +70,7 @@
                             <a class="nav-link dropdown-toggle  active" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Aulas</a>
                             <div class="dropdown-menu" aria-labelledby="dropdownId">
                                 <a class="dropdown-item" href="{{ route('cursos.index') }}">Cursos</a>
-                                <a class="dropdown-item" href="{{ url('/') }}">Actividades</a>
+                                <a class="dropdown-item" href="{{ route('actividades.index') }}">Actividades</a>
                             </div>
                         </li>
 
