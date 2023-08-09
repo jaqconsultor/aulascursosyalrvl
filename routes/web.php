@@ -9,6 +9,7 @@ use App\Http\Controllers\FormatoArchivoController;
 use App\Http\Controllers\TemasController;
 use App\Http\Controllers\PlanesController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\CursosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,4 @@ Route::resource('formatoarchivo', FormatoArchivoController::class);
 Route::resource('temas', TemasController::class);
 Route::resource('planes', PlanesController::class);
 Route::resource('roles', RolesController::class);
-
+Route::resource('cursos', CursosController::class);
