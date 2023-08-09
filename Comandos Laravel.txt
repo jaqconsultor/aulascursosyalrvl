@@ -7,7 +7,7 @@ composer require laravel/ui
 
 # Migraciones
 ## Create 
-php artisan make:migration create_formato_archivo_table
+php artisan make:migration campos_de_usuario
 php artisan make:migration create_temas_table
 php artisan make:migration create_tipo_actividad_table
 php artisan make:migration create_cursos_table
@@ -40,7 +40,6 @@ php artisan serve
 php artisan make:controller IdiomaController
 
 # Make Controler con los Recursos
-
 
 # Rutas de las Aplicacion
 php artisan route:list
