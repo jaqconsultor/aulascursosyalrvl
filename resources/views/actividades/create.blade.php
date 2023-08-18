@@ -8,7 +8,7 @@
             <h2>Roles</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('cursos.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('actividades.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -24,12 +24,11 @@
     </div>
 @endif
    
-<form action="{{ route('cursos.store') }}" method="POST">
+<form action="{{ route('actividades.store') }}" method="POST">
     @csrf
   
      <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-
         <div class="form-group">
                     <strong>numero:</strong>
                     <input type="text" name="numero"  class="form-control" placeholder="numero">
@@ -39,36 +38,33 @@
                     <input type="text" name="nombre"  class="form-control" placeholder="nombre">
                 </div>
                 <div class="form-group">
-                    <strong>nivel:</strong>
-                    <input type="text" name="nivel"  class="form-control" placeholder="nivel">
+                    <strong>curso_id</strong>
+                    <input type="text" name="curso_id"  class="form-control" placeholder="curso_id">
+                </div>
+
+
+                <div class="form-group">
+                {!! $tema_id !!}
+</div>
                 </div>
                 <div class="form-group">
-                    <strong>subnivel:</strong>
-                    <input type="text" name="subnivel" class="form-control" placeholder="subnivel">
+                  
+                {!! $tipo_actividad_id !!}
+</div>
                 </div>
                 <div class="form-group">
-                    <strong>area:</strong>
-                    <input type="text" name="area"  class="form-control" placeholder="area">
-                </div>
+
+                {!! $formato_archivo_id !!}
+</div>
+                
                 <div class="form-group">
-                    <strong>imagen:</strong>
-                    <input type="text" name="imagen"  class="form-control" placeholder="imagen">
-                </div>
-                <div class="form-group">
-                    <strong>objetivo:</strong>
-                    <input type="text" name="objetivo"  class="form-control" placeholder="objetivo">
-                </div>
-                <div class="form-group">
-                    <strong>user_id:</strong>
-                    <input type="text" name="user_id"  class="form-control" placeholder="user_id">
+                    <strong>nombre_recurso</strong>
+                    <input type="text" name="nombre_recurso"  class="form-control" placeholder="nombre_recurso">
                 </div>
                 <div class="form-group">
                     <strong>activo:</strong>
-                    <input type="text" name="activo"  class="form-control" placeholder="activo">
+                    <input type="text" name="activo"  value ="1" class="form-control" placeholder="activo">
                 </div>
-
-
-
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>

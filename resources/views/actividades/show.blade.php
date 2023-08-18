@@ -14,8 +14,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-
-                  <div class="form-group">
+            <div class="form-group">
                 <strong>Id:</strong>
                 {{ $actividade->id }}
             </div>
@@ -33,8 +32,17 @@
             </div>
             <div class="form-group">
                 <strong>tema_id:</strong>
-                {{ $actividade->tipo_actividad_id }}
+                {{ $actividade->tema->nombre }}
             </div>
+            <div class="form-group">
+                <strong>tipo_actividad:</strong>
+                {{ $actividade->tipo_actividad->nombre }}
+            </div>
+            <div class="form-group">
+                <strong>formato_archivo:</strong>
+                {{ $actividade->formato_archivo->nombre }}
+            </div>
+
             <div class="form-group">
                 <strong>nombre_recurso:</strong>
                 {{ $actividade->nombre_recurso }}

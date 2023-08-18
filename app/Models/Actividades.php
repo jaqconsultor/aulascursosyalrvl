@@ -19,4 +19,20 @@ class Actividades extends Model
         'nombre_recurso',
         'activo',
     ];
+
+    public function tema()
+    {
+     return $this->belongsTo('App\Models\Temas');
+    }
+
+    public function tipo_actividad()
+    {
+     return $this->belongsTo('App\Models\TipoActividad');
+    }
+
+    public function formato_archivo()
+    {
+     return $this->belongsTo('App\Models\FormatoArchivo');
+    }
+
 }

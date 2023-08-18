@@ -12,4 +12,10 @@ class FormatoArchivo extends Model
     protected $fillable = [
         'nombre'
     ];
+
+    public function actividades()
+    {
+      return $this->hasMany('App\Models\Actividades');
+    }
+
 }

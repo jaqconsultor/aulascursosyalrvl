@@ -48,3 +48,7 @@ Route::resource('planes', PlanesController::class);
 Route::resource('roles', RolesController::class);
 Route::resource('cursos', CursosController::class);
 Route::resource('actividades', ActividadesController::class);
+//Route::get('/actividadesver/{id}','ActividadesController@show');
+  
+//{{url('/Cruds/Antece_paciente/Eliminar/'.$d->id)}}
+

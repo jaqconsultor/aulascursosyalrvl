@@ -1,2 +1,14 @@
 TODO
 $articulo->sucursal->nombre;
+
+
+$articulo = Articulo::with('sucursal:id,nombre')->get();
+
+{
+  "id":1,
+  "detalle":"mesa 1",
+  "sucursal":{
+      "id":1,
+      "nombre":"sucursal 1"
+    }
+}

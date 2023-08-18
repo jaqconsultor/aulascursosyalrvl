@@ -39,9 +39,9 @@
             <td>{{ $product->numero }}</td>
             <td>{{ $product->nombre }}</td>
             <td>{{ $product->curso_id }}</td>
-            <td>{{ $product->tema_id }}</td>
-            <td>{{ $product->tipo_actividad_id }}</td>
-            <td>{{ $product->formato_archivo_id }}</td>
+            <td>{{ $product->tema->nombre }}</td>
+            <td>{{ $product->tipo_actividad->nombre }}</td>
+            <td>{{ $product->formato_archivo->nombre }}</td>
             <td>{{ $product->nombre_recurso }}</td>
             <td>{{ $product->activo }}</td>
             <td>

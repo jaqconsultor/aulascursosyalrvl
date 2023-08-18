@@ -53,6 +53,9 @@
     
                     <a class="btn btn-primary" href="{{ route('cursos.edit',$product->id) }}">Edit</a>
    
+                    <a class="btn btn-primary" href="{{ action('ActividadesController@cursosactividades', $product->id) }}">Ver Actividades</a>
+
+
                     @csrf
                     @method('DELETE')
       

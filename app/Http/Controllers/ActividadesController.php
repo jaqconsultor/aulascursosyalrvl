@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Actividades;
+use App\Models\FormatoArchivo;
+use App\Models\Temas;
+use App\Models\TipoActividad;
+
 use Illuminate\Http\Request;
 
 class ActividadesController extends Controller
@@ -13,8 +17,13 @@ class ActividadesController extends Controller
      * @return \Illuminate\s\ActividadesHttp\Response
      */
 
+     private $tema, $tipo_actividad, $formato_archivo;
+
+
     public function __construct() { 
         
+
+
     }
     
     public function index()
@@ -25,6 +34,15 @@ class ActividadesController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
+    public function cursosactividades($curso_id)
+    {
+        $actividades = Actividades::where('curso_id',$this->$curso_id)->latest()->paginate(5);
+    
+        return view('actividades.index',compact('actividades'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -32,7 +50,49 @@ class ActividadesController extends Controller
      */
     public function create()
     {
-        return view('actividades.create');
+
+        $tema = Temas::all();
+        $tipo_actividad = TipoActividad::all();
+        $formato_archivo = FormatoArchivo::all();
+
+        $tema_id = '<div class="mb-3">
+        <label for="tema_id" class="form-label">tema_id</label>
+        <select class="form-select form-select-lg" name="tema_id" id="tema_id">';
+
+        foreach ($tema as $valor) {
+            $tema_id = $tema_id . '<option value="'.$valor->id.'">'.$valor->nombre.'</option>';
+        }
+        $tema_id = $tema_id . '</select>
+    </div>';
+    
+        $tipo_actividad_id = '<div class="mb-3">
+        <label for="tipo_actividad_id" class="form-label">tipo_actividad_id</label>
+        <select class="form-select form-select-lg" name="tipo_actividad_id" id="tipo_actividad_id">';
+
+        foreach ($tipo_actividad as $valor) {
+            $tipo_actividad_id = $tipo_actividad_id . '<option value="'.$valor->id.'">'.$valor->nombre.'</option>';
+        }
+
+        $tipo_actividad_id = $tipo_actividad_id . '</select>
+    </div>';
+
+   
+        $formato_archivo_id = '<div class="mb-3">
+        <label for="formato_archivo_id" class="form-label">formato_archivo_id</label>
+        <select class="form-select form-select-lg" name="formato_archivo_id" id="formato_archivo_id">';
+
+        foreach ($formato_archivo as $valor) {
+            $formato_archivo_id = $formato_archivo_id . '<option value="'.$valor->id.'">'.$valor->nombre.'</option>';
+        }
+
+        $formato_archivo_id = $formato_archivo_id . '</select>
+        </div>';
+
+          return view('actividades.create')->with([
+            'tema_id' => $tema_id,
+            'tipo_actividad_id' => $tipo_actividad_id,
+            'formato_archivo_id' => $formato_archivo_id 
+          ]);
     }
 
     /**
@@ -79,7 +139,46 @@ class ActividadesController extends Controller
      */
     public function edit(Actividades $actividade)
     {
-        return view('actividades.edit',compact('actividade'));
+        
+        $tema_id = '<div class="mb-3">
+        <label for="tema_id" class="form-label">tema_id</label>
+        <select class="form-select form-select-lg" name="tema_id" id="tema_id">
+            <option selected>Select one</option>
+            <option value="">New Delhi</option>
+            <option value="">Istanbul</option>
+            <option value="">Jakarta</option>
+        </select>
+    </div>';
+    
+        $tipo_actividad_id = '<div class="mb-3">
+        <label for="tipo_actividad_id" class="form-label">tipo_actividad_id</label>
+        <select class="form-select form-select-lg" name="tipo_actividad_id" id="tipo_actividad_id">
+            <option selected>Select one</option>
+            <option value="">New Delhi</option>
+            <option value="">Istanbul</option>
+            <option value="">Jakarta</option>
+        </select>
+    </div>';
+
+   
+        $formato_archivo_id = '<div class="mb-3">
+        <label for="formato_archivo_id" class="form-label">formato_archivo_id</label>
+        <select class="form-select form-select-lg" name="formato_archivo_id" id="formato_archivo_id">
+            <option selected>Select one</option>
+            <option value="">New Delhi</option>
+            <option value="">Istanbul</option>
+            <option value="">Jakarta</option>
+        </select>
+        </div>';
+
+        return view('actividades.edit')->with([
+            'actividade' => $actividade,
+            'tema_id' => $tema_id,
+            'tipo_actividad_id' => $tipo_actividad_id,
+            'formato_archivo_id' => $formato_archivo_id 
+          ]);
+        
+      
     }
 
     /**
