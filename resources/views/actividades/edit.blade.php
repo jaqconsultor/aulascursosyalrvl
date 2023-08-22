@@ -28,10 +28,6 @@
         @csrf
         @method('PUT')
 
-    
-   
-  
-
          <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
@@ -50,19 +46,18 @@
                 </div>
 
                 <div class="form-group">
-                    <strong>tema_id:</strong>
-                    <input type="text" name="tema_id" value="{{ $actividade->tema_id }}" class="form-control" placeholder="tema_id">
+                {!! $tema_id !!}
+</div>
                 </div>
-
                 <div class="form-group">
-                    <strong>tipo_actividad_id:</strong>
-                    <input type="text" name="tipo_actividad_id" value="{{ $actividade->tipo_actividad_id }}" class="form-control" placeholder="tipo_actividad_id">
+                  
+                {!! $tipo_actividad_id !!}
+</div>
                 </div>
-
                 <div class="form-group">
-                    <strong>formato_archivo_id:</strong>
-                    <input type="text" name="formato_archivo_id" value="{{ $actividade->formato_archivo_id }}" class="form-control" placeholder="formato_archivo_id">
-                </div>
+
+                {!! $formato_archivo_id !!}
+</div>
 
                 <div class="form-group">
                     <strong>nombre_recurso:</strong>

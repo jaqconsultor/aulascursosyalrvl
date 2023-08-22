@@ -140,45 +140,63 @@ class ActividadesController extends Controller
     public function edit(Actividades $actividade)
     {
         
+        $tema = Temas::all();
+        $tipo_actividad = TipoActividad::all();
+        $formato_archivo = FormatoArchivo::all();
+        $selected = "";
+
         $tema_id = '<div class="mb-3">
         <label for="tema_id" class="form-label">tema_id</label>
-        <select class="form-select form-select-lg" name="tema_id" id="tema_id">
-            <option selected>Select one</option>
-            <option value="">New Delhi</option>
-            <option value="">Istanbul</option>
-            <option value="">Jakarta</option>
-        </select>
+        <select class="form-select form-select-lg" name="tema_id" id="tema_id">';
+
+        foreach ($tema as $valor) {
+            $selected = "";
+            if( $valor->id == $actividade->tema_id ) {
+                $selected = "selected";
+            }
+            $tema_id = $tema_id . '<option value="'.$valor->id.'"' . $selected . '>'.$valor->nombre.'</option>';
+        }
+        $tema_id = $tema_id . '</select>
     </div>';
     
         $tipo_actividad_id = '<div class="mb-3">
         <label for="tipo_actividad_id" class="form-label">tipo_actividad_id</label>
-        <select class="form-select form-select-lg" name="tipo_actividad_id" id="tipo_actividad_id">
-            <option selected>Select one</option>
-            <option value="">New Delhi</option>
-            <option value="">Istanbul</option>
-            <option value="">Jakarta</option>
-        </select>
+        <select class="form-select form-select-lg" name="tipo_actividad_id" id="tipo_actividad_id">';
+
+        foreach ($tipo_actividad as $valor) {
+            $selected = "";
+            if( $valor->id == $actividade->tema_id ) {
+                $selected = "selected";
+            }
+            $tipo_actividad_id = $tipo_actividad_id . '<option value="'.$valor->id.'"' . $selected . '>'.$valor->nombre.'</option>';
+        }
+
+        $tipo_actividad_id = $tipo_actividad_id . '</select>
     </div>';
 
    
         $formato_archivo_id = '<div class="mb-3">
         <label for="formato_archivo_id" class="form-label">formato_archivo_id</label>
-        <select class="form-select form-select-lg" name="formato_archivo_id" id="formato_archivo_id">
-            <option selected>Select one</option>
-            <option value="">New Delhi</option>
-            <option value="">Istanbul</option>
-            <option value="">Jakarta</option>
-        </select>
+        <select class="form-select form-select-lg" name="formato_archivo_id" id="formato_archivo_id">';
+
+        foreach ($formato_archivo as $valor) {
+            $selected = "";
+            if( $valor->id == $actividade->tema_id ) {
+                $selected = "selected";
+            }
+            $formato_archivo_id = $formato_archivo_id . '<option value="'.$valor->id.'"' . $selected . '>'.$valor->nombre.'</option>';
+        }
+
+        $formato_archivo_id = $formato_archivo_id . '</select>
         </div>';
 
-        return view('actividades.edit')->with([
-            'actividade' => $actividade,
+          return view('actividades.edit')->with([
+            'actividade'  => $actividade,
             'tema_id' => $tema_id,
             'tipo_actividad_id' => $tipo_actividad_id,
             'formato_archivo_id' => $formato_archivo_id 
           ]);
-        
-      
+    
     }
 
     /**
